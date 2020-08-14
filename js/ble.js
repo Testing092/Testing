@@ -17,8 +17,8 @@ function connect() {
             return device.gatt.connect();
         })
         .then(server => {
-            console.log('Getting Service 5eed665c-0390-11e5-8418-1697f925ec7b - Egn/Ign control...');
-            return server.getPrimaryService('5eed665c-0390-11e5-8418-1697f925ec7b');
+            console.log('Getting Service a59611ba-78b7-4fd2-96fb-9b0f66d2311e - Egn/Ign control...');
+            return server.getPrimaryService('a59611ba-78b7-4fd2-96fb-9b0f66d2311e');
         })
         .then(service => {
             console.log('Getting Characteristic 5eed665c-0390-11e5-8418-1697f925ec7b - Egn/Ign control...');
