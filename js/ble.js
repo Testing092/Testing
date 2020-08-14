@@ -8,7 +8,7 @@ function connect() {
     navigator.bluetooth.requestDevice(
         {
 	        /*acceptAllDevices:true*/
-            filters: [{ services: ['5eed665c-0390-11e5-8418-1697f925ec7b'] }]
+            filters: [{ services: [''a59611ba-78b7-4fd2-96fb-9b0f66d2311e'] }]
         })
         .then(device => {
             console.log('> Found ' + device.name);
@@ -17,12 +17,12 @@ function connect() {
             return device.gatt.connect();
         })
         .then(server => {
-            console.log('Getting Service 0xffe5 - Light control...');
-            return server.getPrimaryService(0xffe5);
+            console.log('Getting Service 5eed665c-0390-11e5-8418-1697f925ec7b - Egn/Ign control...');
+            return server.getPrimaryService('5eed665c-0390-11e5-8418-1697f925ec7b');
         })
         .then(service => {
-            console.log('Getting Characteristic 0xffe9 - Light control...');
-            return service.getCharacteristic(0xffe9);
+            console.log('Getting Characteristic 5eed665c-0390-11e5-8418-1697f925ec7b - Egn/Ign control...');
+            return service.getCharacteristic('5eed665c-0390-11e5-8418-1697f925ec7b');
         })
         .then(characteristic => {
             console.log('All ready!');
