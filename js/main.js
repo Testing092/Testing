@@ -6,3 +6,12 @@ window.onload = () => {
              .register('./sw.js');
   }
 }
+function scan(){
+console.log("Scan clicked");
+let device = await navigator.bluetooth.requestDevice({
+    /*filters: [
+        { namePrefix: 'PLAYBULB' }
+    ],
+    optionalServices: [ 0xff0f ]*/
+});
+}
