@@ -7,7 +7,7 @@ function connect() {
     console.log('Requesting Bluetooth Device...');
     navigator.bluetooth.requestDevice(
         {
-	    acceptAllDevices:true
+	        /*acceptAllDevices:true*/
             filters: [{ services: ['5eed665c-0390-11e5-8418-1697f925ec7b'] }]
         })
         .then(device => {
