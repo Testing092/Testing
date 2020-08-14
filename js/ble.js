@@ -8,7 +8,7 @@ function connect() {
     navigator.bluetooth.requestDevice(
         {
 	        /*acceptAllDevices:true*/
-            filters: [{ services: [''a59611ba-78b7-4fd2-96fb-9b0f66d2311e'] }]
+            filters: [{ services: ['a59611ba-78b7-4fd2-96fb-9b0f66d2311e'] }]
         })
         .then(device => {
             console.log('> Found ' + device.name);
